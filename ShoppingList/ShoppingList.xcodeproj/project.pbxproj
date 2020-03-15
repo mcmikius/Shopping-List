@@ -14,6 +14,7 @@
 		F3E549FA241E8AF5008AF9C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E549F8241E8AF5008AF9C7 /* LaunchScreen.storyboard */; };
 		F3E54A03241E8B31008AF9C7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E54A02241E8B31008AF9C7 /* Item.swift */; };
 		F3E54A06241E8CC9008AF9C7 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E54A05241E8CC9008AF9C7 /* ItemTableViewController.swift */; };
+		F3E54A0A241E981A008AF9C7 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E54A09241E981A008AF9C7 /* BaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F3E549FB241E8AF5008AF9C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E54A02241E8B31008AF9C7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F3E54A05241E8CC9008AF9C7 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		F3E54A09241E981A008AF9C7 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E54A05241E8CC9008AF9C7 /* ItemTableViewController.swift */,
+				F3E54A09241E981A008AF9C7 /* BaseTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				F3E54A06241E8CC9008AF9C7 /* ItemTableViewController.swift in Sources */,
 				F3E54A03241E8B31008AF9C7 /* Item.swift in Sources */,
+				F3E54A0A241E981A008AF9C7 /* BaseTableViewController.swift in Sources */,
 				F3E549EE241E8AF2008AF9C7 /* AppDelegate.swift in Sources */,
 				F3E549F0241E8AF2008AF9C7 /* SceneDelegate.swift in Sources */,
 			);
