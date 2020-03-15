@@ -90,5 +90,19 @@ class ItemTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func didSelectAdd(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New shopping list item", message: "Enter item to add to the shopping list:", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
+            if let itemName = alert.textFields?[0].text {
+                let itemCount = self.items.count
+                let item = Item(name: itemName)
+                self.items.append(item)
+                self.tableView.insertRows(at: [IndexPath(row: itemCount, section: 0)], with: .top)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

@@ -38,7 +38,13 @@
                             <outlet property="delegate" destination="fyd-eD-Rtl" id="LNl-CE-eAo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="w4o-Op-5I1"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="w4o-Op-5I1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dcv-o4-dvO">
+                            <connections>
+                                <action selector="didSelectAdd:" destination="fyd-eD-Rtl" id="tAR-2p-XML"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zy-zp-dzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
