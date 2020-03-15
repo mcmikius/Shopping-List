@@ -10,16 +10,17 @@ import UIKit
 
 class ItemTableViewController: BaseTableViewController {
     
-    var items: [Item] = [Item].load() {
-        didSet {
-            items.save()
+    var list: ShoppingList!
+    var items: [Item] {
+        get {
+            return list.items
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Shopping List Items"
+        self.title = list.name
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
@@ -55,14 +56,14 @@ class ItemTableViewController: BaseTableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            items.remove(at: indexPath.row)
+            list.items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let item = items.remove(at: fromIndexPath.row)
-        items.insert(item, at: to.row)
+        let item = list.items.remove(at: fromIndexPath.row)
+        list.items.insert(item, at: to.row)
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -70,7 +71,7 @@ class ItemTableViewController: BaseTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        items[indexPath.row] = items[indexPath.row].toggleCheck()
+        list.items[indexPath.row] = items[indexPath.row].toggleCheck()
         tableView.reloadRows(at: [indexPath], with: .middle)
     }
     
@@ -90,7 +91,7 @@ class ItemTableViewController: BaseTableViewController {
         requestInput(title: "New shopping list item", message: "Enter item to add to the shopping list:", handler: { (itemName) in
             let itemCount = self.items.count;
             let item = Item(name: itemName)
-            self.items.append(item)
+            self.list.add(item)
             self.tableView.insertRows(at: [IndexPath(row: itemCount, section: 0)], with: .top)
         })
     }
